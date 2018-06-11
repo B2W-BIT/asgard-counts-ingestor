@@ -1,0 +1,70 @@
+*.pyc
+*.swp
+*.swo
+tags
+*~
+cscope*
+*.pyo
+_build
+.cache
+.coverage
+.DS_Store
+.ropeproject
+*.py[co]
+conf_local.py
+.env
+
+# https://github.com/github/gitignore/raw/master/Python.gitignore
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+conf_local.py
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+
+
+# bancos temporarios
+*.db
+.idea
+
+# pasta temporaria usada na exportacao
+wetl/tasks/export/temp/
+
+# Arquivos do PyDev
+.pydevproject
+
+# Esse arquivo sempre é apenas um symlink para etc/<CONF-CORRETO>
+supervisord.conf
+
+*.pid
+
+# vamos manter isso fora do git para que cada um possa ter suas preferências locais
+pytest.ini
+
+# Criado automaticamente no browser.quit() ¬¬
+ghostdriver.log
+#cef
+debug.log
+
+# Chef environements
+/compose/*.env
