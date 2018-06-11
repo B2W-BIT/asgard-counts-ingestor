@@ -19,7 +19,7 @@ setup(
     ],
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     install_requires = [
-        "async-worker>=0.1.0",
+        "async-worker>=0.1.0-rc3",
         "simple-json-logger==0.2.3",
     ],
     entry_points={},
