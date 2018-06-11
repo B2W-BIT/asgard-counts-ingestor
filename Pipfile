@@ -14,6 +14,7 @@ pytz = "==2018.4"
 [dev-packages]
 ipdb = "==0.11"
 asynctest = "*"
+pytest-coverage = "*"
 
 [requires]
 python_version = "3.6"
