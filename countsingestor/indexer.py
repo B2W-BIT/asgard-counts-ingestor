@@ -1,5 +1,7 @@
 from datetime import datetime
 
+from countsingestor import conf
+
 class CountsIndexer:
 
     ASGARD_TAG_PREFIX = "asgard.app"
@@ -20,8 +22,10 @@ class CountsIndexer:
 
         indexed_document = {}
 
-        indexed_document['appname'] = self._extract_app_name(fluentd_tag)
-        indexed_document['log_parse'] = self._log_type(fluentd_tag)
+        appname = self._extract_app_name(fluentd_tag)
+        count_type = self._log_type(fluentd_tag)
+        indexed_document['appname'] = appname
+        indexed_document['log_parse'] = count_type
 
         indexed_document['timestamp'] = datetime.utcfromtimestamp(document['timestamp']).isoformat()
         indexed_document['bytes/s'] = document['payload']['bytes_rate']
@@ -30,6 +34,7 @@ class CountsIndexer:
         indexed_document['count'] = document['payload']['count']
 
         await self.elasticsearch.index(index=index_name, doc_type="counts", body=indexed_document)
+        conf.logger.info({"index-time": 0, "appname": appname, "count-type": count_type})
 
     def _extract_app_name(self, fluentd_tag):
         remove_errors_prefix = fluentd_tag.replace(self.ASGARD_TAG_ERROR_PREFIX, "", 1)
