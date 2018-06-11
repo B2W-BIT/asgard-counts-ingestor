@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aioelasticsearch = "==0.5.2"
+async-worker = "==0.1.0-rc3"
+asgard-api-sdk = "==0.2.0"
+pytest = "==3.6.1"
+python-dateutil = "==2.7.3"
+pytz = "==2018.4"
+
+[dev-packages]
+ipdb = "==0.11"
+asynctest = "*"
+
+[requires]
+python_version = "3.6"
