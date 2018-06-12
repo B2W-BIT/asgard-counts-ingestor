@@ -6,7 +6,7 @@ from aioelasticsearch import Elasticsearch
 
 from asgard.sdk.options import get_option
 
-LOGLEVEL = os.getenv("ASGARD_LOGLEVEL", "INFO")
+LOGLEVEL = os.getenv("ASGARD_COUNTS_LOGLEVEL", "INFO")
 
 logger = JsonLogger(flatten=True)
 logger.setLevel(getattr(logging, LOGLEVEL, logging.INFO))
