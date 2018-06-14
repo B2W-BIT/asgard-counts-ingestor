@@ -1,15 +1,23 @@
 import os
 import logging
+import asyncio
 
-from simple_json_logger import JsonLogger
+from aiologger.loggers.json import JsonLogger
 from aioelasticsearch import Elasticsearch
 
 from asgard.sdk.options import get_option
 
-LOGLEVEL = os.getenv("ASGARD_COUNTS_LOGLEVEL", "INFO")
+LOGLEVEL_CONF = os.getenv("ASGARD_COUNTS_LOGLEVEL", "INFO")
+loglevel = getattr(logging, LOGLEVEL_CONF, logging.INFO)
 
-logger = JsonLogger(flatten=True)
-logger.setLevel(getattr(logging, LOGLEVEL, logging.INFO))
+logger = None
+
+async def init_logger():
+    global logger
+    logger = await JsonLogger.with_default_handlers(level=loglevel, flatten=True)
+
+loop = asyncio.get_event_loop()
+init_logger_task = loop.create_task(init_logger())
 
 ELASTIC_SEARCH_ADDRESSES = get_option("ELASTICSEARCH", "ADDRESS")
 
