@@ -1,9 +1,12 @@
 import unittest
 from unittest import mock
+import asyncio
+
 import asynctest
 from asynctest import CoroutineMock
 
 from countsingestor.indexer import CountsIndexer
+from countsingestor import conf
 
 class IndexerTest(asynctest.TestCase):
     """
@@ -38,6 +41,9 @@ class IndexerTest(asynctest.TestCase):
 
     async def setUp(self):
         super().setUp()
+        self.logger_patcher = asynctest.mock.patch.object(conf, 'logger', CoroutineMock(info=CoroutineMock()))
+        self.logger_patcher.start()
+
         self.counts_ok_fixture = {
            "key" : "counts.ok.1m",
            "payload" : {
@@ -62,6 +68,9 @@ class IndexerTest(asynctest.TestCase):
         }
 
         self.indexer = CountsIndexer(elasticsearch=CoroutineMock(index=CoroutineMock()))
+
+    async def tearDown(self):
+        asynctest.mock.patch.stopall()
 
     def test_detect_log_type(self):
         """

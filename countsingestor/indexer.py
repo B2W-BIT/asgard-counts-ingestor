@@ -34,7 +34,7 @@ class CountsIndexer:
         indexed_document['count'] = document['payload']['count']
 
         await self.elasticsearch.index(index=index_name, doc_type="counts", body=indexed_document)
-        conf.logger.info({"index-time": 0, "appname": appname, "count-type": count_type})
+        await conf.logger.info({"index-time": 0, "appname": appname, "count-type": count_type})
 
     def _extract_app_name(self, fluentd_tag):
         remove_errors_prefix = fluentd_tag.replace(self.ASGARD_TAG_ERROR_PREFIX, "", 1)
