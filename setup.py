@@ -6,7 +6,7 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='asgard-counts-ingestor',
-    version='0.1.0-rc1',
+    version='0.1.0',
     description="Coletor de estatísticas de logs das aplicações",
     long_description="Coletor de estatísticas de logs das aplicações",
     url='https://github.com/B2W-BIT/asgard-counts-ingestor',
