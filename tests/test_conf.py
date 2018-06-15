@@ -3,12 +3,15 @@ from unittest import mock
 import os
 import sys
 import importlib
+
+import asynctest
+
 from countsingestor import conf
 
-class ConfTest(unittest.TestCase):
+class ConfTest(asynctest.TestCase):
 
     #@unittest.skip("Está falhando quando roda a suite toda")
-    def test_read_options_from_envvar(self):
+    async def test_read_options_from_envvar(self):
         with mock.patch.dict(os.environ,
                          COUNTS_RABBITMQ_HOST="10.0.0.42",
                          COUNTS_RABBITMQ_USER="myuser",
