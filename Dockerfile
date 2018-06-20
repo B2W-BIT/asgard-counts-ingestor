@@ -1,7 +1,7 @@
 FROM python:3.6.5-alpine
 
 #Tag: sieve/infra/asgard-counts-ingestor
-#Version: 0.1.0
+#Version: 0.2.0-rc1
 
 WORKDIR /opt/app
 
