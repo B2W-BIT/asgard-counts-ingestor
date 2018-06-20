@@ -20,7 +20,7 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     install_requires = [
         "async-worker>=0.1.0-rc3",
-        "simple-json-logger==0.2.3",
+        "aiologger>=0.1.0-rc4",
     ],
     entry_points={},
 )

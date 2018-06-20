@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d4f096596b28f9bfc8626f906d4b36334a010df3933fe639a82d56c8f4e987f8"
+            "sha256": "baaf676c0847b44fcf5749246f42bb1780ca8bd8f7fae39336e10e51173c9e39"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -53,10 +53,10 @@
         },
         "aiologger": {
             "hashes": [
-                "sha256:e1b3c1c30b48e2ec1914f7351ed929f96e64d72b3d951379bb4af2453493f627"
+                "sha256:e7f802e9c3a913838ff2316515559c8b45b70b13137fe8a9d8c7b2687ee2c755"
             ],
             "index": "pypi",
-            "version": "==0.1.0rc3"
+            "version": "==0.1.0rc4"
         },
         "asgard-api-sdk": {
             "hashes": [
