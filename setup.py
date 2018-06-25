@@ -6,7 +6,7 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='asgard-counts-ingestor',
-    version='0.1.0',
+    version='0.2.0-rc1',
     description="Coletor de estatísticas de logs das aplicações",
     long_description="Coletor de estatísticas de logs das aplicações",
     url='https://github.com/B2W-BIT/asgard-counts-ingestor',
@@ -20,7 +20,7 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     install_requires = [
         "async-worker>=0.1.0-rc3",
-        "simple-json-logger==0.2.3",
+        "aiologger>=0.1.0-rc4",
     ],
     entry_points={},
 )

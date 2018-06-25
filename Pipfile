@@ -10,7 +10,7 @@ asgard-api-sdk = "==0.2.0"
 pytest = "==3.6.1"
 python-dateutil = "==2.7.3"
 pytz = "==2018.4"
-aiologger = "==0.1.0-rc3"
+aiologger = "==0.1.0"
 
 [dev-packages]
 ipdb = "==0.11"
